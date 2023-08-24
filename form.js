@@ -21,6 +21,7 @@ function insertNewRecord() {
     list = JSON.parse(temp);
     list.push(getData());
     localStorage.setItem("data", JSON.stringify(list));
+    sessionStorage.setItem("data", JSON.stringify(list));
     intoTable(list.length-1);
 }
 function  updateRecord() {
@@ -28,6 +29,7 @@ function  updateRecord() {
   list[index]=getData();
   editDataTable(list[index]);
   localStorage.setItem("data", JSON.stringify(list));
+  sessionStorage.setItem("data", JSON.stringify(list));
   newData=true;
 }
 function getData() {
@@ -128,7 +130,7 @@ function Type() {
     let deleteButton = document.createElement("button");
   deleteButton.innerHTML = "delete";
   deleteButton.addEventListener("click", function () { 
-    deleteRow(i);
+    deleteRow(list[i]);
     
   });
   cel16.appendChild(editButton);
@@ -261,13 +263,19 @@ editRow.cells[13].innerHTML = newData.criticalaccount;
 editRow.cells[14].innerHTML = newData.paymentoptions;
 }
 // .....delete...
-function deleteRow(ind) {
+function deleteRow(edit) {
+ 
   let getData = JSON.parse(localStorage.getItem("data"));
+  var ind = getData.findIndex(function (item) {
+    return item.mail == edit.mail;
+  });
   if (ind !=-1) {
+    console.log(ind);
     getData.splice(ind, 1);
-    localStorage.setItem("data", JSON.stringify(getData));
-
     let table = document.getElementById("dataTable");
     table.deleteRow(ind+1);
+    localStorage.setItem("data", JSON.stringify(getData));
+
+   
   }
 }

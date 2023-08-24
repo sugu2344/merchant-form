@@ -128,6 +128,59 @@
     
             </form>
         </div>
+        <!-- filter -->
+        <div class="filter">
+            <!-- TYPE -->
+            <div class="filter-container-TYPE">
+             <label for="typeFilter">Filter by Type:</label>
+             <input type="checkbox" id="allTypes" name="filterType" value="" checked>
+             <label for="allTypes">All</label>
+         
+             <input type="checkbox" id="smallBusiness" name="filterType" value="smallbusiness">
+             <label for="smallBusiness">Small Business</label>
+         
+             <input type="checkbox" id="enterprise" name="filterType" value="enterprise">
+             <label for="enterprise">Enterprise</label>
+         
+             <input type="checkbox" id="entrepreneur" name="filterType" value="entrepreneur">
+             <label for="entrepreneur">Entrepreneur</label>
+         
+             <button onclick="applyFilterstype()">Apply Filters</button>
+         </div>
+         <!-- CRITICAL ACCOUNT -->
+         <div class="filter-container-CRITICALACCOUNT">
+             <label for="typeFilter">critical account:</label>
+             <input type="checkbox" id="allaccounts" name="filterType" value="" checked>
+             <label for="allTypes">All</label>
+         
+             <input type="checkbox" id="filteryes" name="filterType" value="filteryes">
+             <label for="filteryes">yes</label>
+         
+             <input type="checkbox" id="filterNo" name="filterType" value="filterNo">
+             <label for="filterNo">No</label>
+         
+             <button onclick="applyFilterscriticalaccount()">Apply Filters</button>
+         </div>
+         <!-- PAYMENT OPTIONS -->
+         <div class="filter-container-payment">
+         <label for="typeFilter">Payment Options:</label>
+         <input type="checkbox" id="allTypes" name="filterPayment" value="" checked>
+         <label for="allTypes">All</label>
+     
+         <input type="checkbox" id="filtercod" name="filterType" value="filtercod">
+         <label for="filtercod">cash on delivery</label>
+     
+         <input type="checkbox" id="filterUpi" name="filterType" value="filterUpi">
+         <label for="filterUpi">UPI</label>
+     
+         <input type="checkbox" id="filtercard" name="filterType" value="filtercard">
+         <label for="filtercard">card payment</label>
+     
+         <button onclick="applyFilterspayments()">Apply Filters</button>
+         </div>
+     </div>
+       
+     
 
         <table id="dataTable">
             <thead>
