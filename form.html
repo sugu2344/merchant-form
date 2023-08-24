@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Merchant Form</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="formcolumn">
+            <div class="heading">
+                <h2>Merchant Form</h2>
+            </div>
+           
+            <form id="formdetails">
+                <div class="formcontent">
+                    <div class="content">
+                        <label for="fname">Name:</label>
+                        <input type="text" id="fname" name="fname" placeholder="Type your Name" required>
+                    </div>
+                    <div class="content">
+                        <label for="Email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="abcd@gmail.com" required>
+                    </div>
+                    <div class="content">
+                        <label for="phone">phone:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="12345-67890">
+                    </div>
+                    <div class="content">
+                        <label for="website">website:</label>
+                        <input type="text" id="website" name="website" placeholder="abcd@info.info">
+                    </div>
+                    <div class="content">
+                        <label for="contactname">Contact Name:</label>
+                        <input type="text" id="contactname"name="contact name" placeholder="Type your Name" required>
+                    </div>
+                    <div class="content">
+                        <label for="contactphone">Contact Phone:</label>
+                        <input type="tel" id="contactphone" name="contactphone" placeholder="Type your Number">
+                    </div>
+                    <div class="content">
+                        <label for="contactemail">Contact Email:</label>
+                        <input type="email" id="contactemail" name="email" placeholder="Contact Email"required>
+                    </div>
+                    <div class="content">
+                        <label for="notes">Notes:</label>
+                        <textarea id="notes" rows="1" cols="0" name="comment" form="usrform"></textarea>
+                    </div>
+                    <div class="content1">
+                        <div>
+                        <h3>Type:</h3>
+                    </div>
+                    <div>
+                        <input type="radio" id="type" name="Type" value="smallbusiness">
+                        <label for="smallbusiness">small Business</label><br>   
+                        <input type="radio" id="type" name="Type" value="enterprise">
+                        <label for="html">Enterprise</label><br>     
+                        <input type="radio" id="type" name="Type" value="entrepreneur">
+                        <label for="entrepreneur">Entrepreneur</label><br>
+                        </div>
+                    </div>
+                    <div class="content1">
+                        <div>
+                            <h3>Category</h3>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="category" name="category" value="cloths">
+                            <label for="Cloths"> Cloths</label><br>
+                            <input type="checkbox" id="category" name="category" value="toys">
+                            <label for="toys"> Toys</label><br>
+                            <input type="checkbox" id="category" name="category" value="groceries">
+                            <label for="groceries">Groceries</label><br>
+                            <input type="checkbox" id="category" name="category" value="electronics">
+                            <label for="electronics">Electronics</label><br>
+                            <input type="checkbox" id="category" name="category" value="digital">
+                            <label for="digital">Digital</label><br>
+                            
+                        </div>
+                        </div>
+                        <div class="content">
+                            <label for="commission">Commision Percentage:</label>
+                            <input type="number" id="commisionpercentage" name="commisionpercentage" placeholder="values in %">
+                        </div>
+                        <div class="content">
+                            <label for="activeform">Active From:</label>
+                            <input type="date" id="activeform" name="activeform">
+    
+                        </div>
+                        <div class="content">
+                            <label for="myfile">logo:</label>
+                            <input type="file" id="myfile" name="myfile"><br><br>
+                        </div>
+                        
+                        <div class="content1">
+                            <div>
+                            <h3>Critical Account</h3>
+                        </div>
+                        <div>
+                            <input type="radio" id="yes" name="CriticalAccount" value="yes">
+                            <label for="yes">Yes</label><br>  
+                            <input type="radio" id="yes" name="CriticalAccount" value="no">
+                            <label for="no">NO</label><br>   
+    
+                        </div>
+                         </div>
+    
+                         <div class="content1">
+                            <div>
+                            <h3>Payment options</h3>
+                            </div>
+                            <div>
+                            <input type="radio" id="payment" name="Paymentoptions" value="cod">
+                            <label for="cod">Cash on delivery</label><br>   
+                            <input type="radio" id="payment" name="Paymentoptions" value="upi">
+                            <label for="upi">UPI</label><br>     
+                            <input type="radio" id="payment" name="Paymentoptions" value="cardpayment">
+                            <label for="cardpayment">card Payment</label><br>
+                        </div>
+                        </div>
+                        <div class="buttons">
+                            <!-- <input class="buttons1" type="reset" value="Reset"> -->
+                            <input class="buttons1" id="myButton" type="submit"  value="Submit"  >
+                        </div>
+                    </div>
+    
+            </form>
+        </div>
+
+        <table id="dataTable">
+            <thead>
+            <tr>
+              <th class="aa">Name</th>
+              <th class="aa">Email</th>
+              <th class="aa">Phone number</th>
+              <th class="aa">Website</th>
+              <th class="aa">Contact name</th>
+              <th class="aa">Contact Phone</th>
+              <th class="aa">Contact Email</th>
+              <th class="aa">Notes</th>
+              <th class="aa">Type</th>
+              <th class="aa">Category</th>
+              <th class="aa">Commision Percentage</th>
+              <th class="aa">Active From</th>
+              <th class="aa">Logo</th>
+              <th class="aa">Critical Account</th>
+              <th class="aa">Payment Options</th>
+              <th>action</th>
+             
+            </tr>
+        </thead>
+        <tbody class="table-body">
+             </tbody>
+          </table>
+    </div>
+    
+   
+    <script src="form.js"></script>
+    
+</body>
+</html>
