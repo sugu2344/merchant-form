@@ -2,7 +2,7 @@ let list = [];
 let newData = true;
 let record = {};
 let index;
-
+// let cellno;
 document.getElementById('myButton').addEventListener('click', function(event) {
     event.preventDefault();
     AddRow(event);
@@ -41,6 +41,7 @@ function getData() {
   record.contactphone = document.getElementById("contactphone").value;
   record.contactemail = document.getElementById("contactemail").value;
   record.notes = document.getElementById("notes").value;
+  console.log(Type());
   record.type = Type();
   record.category = category();
   record.commisionpercentage = document.getElementById("commisionpercentage").value;
@@ -55,7 +56,8 @@ function Type() {
     let radio = document.getElementsByName("Type");
     let selectedType = "";
     for (i = 0; i < radio.length; i++) {
-      if (radio[i].checked) selectedType = radio[i].value;
+      if (radio[i].checked) 
+      selectedType = radio[i].value;
     }
     return selectedType;
   }
@@ -279,3 +281,145 @@ function deleteRow(edit) {
    
   }
 }
+// filter data
+// type
+function getSelectedFilterType() {
+
+  var filterRadios = document.getElementsByName("filterType");
+   for (var i = 0; i < filterRadios.length; i++) {
+    if (filterRadios[i].checked) {
+      return filterRadios[i].value;
+    }
+  }
+}
+function filterType() {  
+  var filterType = getSelectedFilterType();
+  cellno=8;
+  filterData(filterType,8);
+}
+function  filterData(Type,cellno) {
+    var table = document.getElementById("dataTable");
+
+    for (var i = 1; i < table.rows.length; i++) {
+      var row = table.rows[i];
+
+      const cell = row.cells[cellno];
+      const cellText = (cell.textContent || cell.innerText).toLowerCase(); 
+      if (cellText.includes(Type.toLowerCase())) {
+        row.style.display = ""; 
+      } else {
+        row.style.display = "none"; 
+      }
+    }
+  }
+function clearFilter() {
+  var table = document.getElementById("dataTable");
+  for (var i = 1; i < table.rows.length; i++) {
+    table.rows[i].style.display = ""; 
+  }
+}
+// critical account
+
+function getSelectedFilterAccount() {
+
+  var filterRadios = document.getElementsByName("filteraccount");
+   for (var i = 0; i < filterRadios.length; i++) {
+    if (filterRadios[i].checked) {
+      return filterRadios[i].value;
+    }
+  }
+}
+function filteraccount() {  
+  var filteraccount = getSelectedFilterAccount();
+  console.log(filteraccount)
+//   // cellno=8;
+  filterData(filteraccount,13);
+  
+}
+function  filterData(Type,cellno) {
+    var table = document.getElementById("dataTable");
+
+    for (var i = 1; i < table.rows.length; i++) {
+      var row = table.rows[i];
+
+      const cell = row.cells[cellno];
+      const cellText = (cell.textContent || cell.innerText).toLowerCase(); 
+      if (cellText.includes(Type.toLowerCase())) {
+        row.style.display = ""; 
+      } else {
+        row.style.display = "none"; 
+      }
+    }
+  }
+  // filter payment
+  function getSelectedFilterPayment() {
+
+    var filterRadios = document.getElementsByName("filterPayment");
+     for (var i = 0; i < filterRadios.length; i++) {
+      if (filterRadios[i].checked) {
+        return filterRadios[i].value;
+      }
+    }
+  }
+  function filterPayment() {  
+    var filterPayment = getSelectedFilterPayment();
+    console.log(filterPayment)
+   
+    filterData(filterPayment,14);
+    
+  }
+  function  filterData(Type,cellno) {
+      var table = document.getElementById("dataTable");
+  
+      for (var i = 1; i < table.rows.length; i++) {
+        var row = table.rows[i];
+  
+        const cell = row.cells[cellno];
+        const cellText = (cell.textContent || cell.innerText).toLowerCase(); 
+        if (cellText.includes(Type.toLowerCase())) {
+          row.style.display = ""; 
+        } else {
+          row.style.display = "none"; 
+        }
+      }
+    }
+    // catogeries
+    function getSelectedFilterCategory() {
+
+      var filterRadios = document.getElementsByName("filtercategory");
+       for (var i = 0; i < filterRadios.length; i++) {
+        if (filterRadios[i].checked) {
+          return filterRadios[i].value;
+        }
+      }
+    }
+    function filtercategory() {  
+      var filtercategory = getSelectedFilterCategory();
+      console.log(filtercategory)
+     
+      filterData(filtercategory,9);
+      
+    }
+    function  filterData(Type,cellno) {
+        var table = document.getElementById("dataTable");
+    
+        for (var i = 1; i < table.rows.length; i++) {
+          var row = table.rows[i];
+    
+          const cell = row.cells[cellno];
+          const cellText = (cell.textContent || cell.innerText).toLowerCase(); 
+          if (cellText.includes(Type.toLowerCase())) {
+            row.style.display = ""; 
+          } else {
+            row.style.display = "none"; 
+          }
+        }
+      }
+
+      // total
+
+
+
+
+
+
