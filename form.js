@@ -41,7 +41,7 @@ function getData() {
   record.contactphone = document.getElementById("contactphone").value;
   record.contactemail = document.getElementById("contactemail").value;
   record.notes = document.getElementById("notes").value;
-  console.log(Type());
+  // console.log(Type());
   record.type = Type();
   record.category = category();
   record.commisionpercentage = document.getElementById("commisionpercentage").value;
@@ -245,7 +245,7 @@ function Type() {
     }
   }
   function editDataTable(newData){
-    console.log(index)
+    // console.log(index)
   let table = document.getElementById("dataTable");
   let editRow = table.rows[index + 1];
   editRow.cells[0].innerHTML = newData.name;
@@ -272,7 +272,7 @@ function deleteRow(edit) {
     return item.mail == edit.mail;
   });
   if (ind !=-1) {
-    console.log(ind);
+    // console.log(ind);
     getData.splice(ind, 1);
     let table = document.getElementById("dataTable");
     table.deleteRow(ind+1);
@@ -283,6 +283,11 @@ function deleteRow(edit) {
 }
 // filter data
 // type
+function filterType() {  
+  var filterType = getSelectedFilterType();
+  // cellno=8;
+  filterData(filterType,8);
+}
 function getSelectedFilterType() {
 
   var filterRadios = document.getElementsByName("filterType");
@@ -292,11 +297,7 @@ function getSelectedFilterType() {
     }
   }
 }
-function filterType() {  
-  var filterType = getSelectedFilterType();
-  cellno=8;
-  filterData(filterType,8);
-}
+
 function  filterData(Type,cellno) {
     var table = document.getElementById("dataTable");
 
@@ -319,6 +320,13 @@ function clearFilter() {
   }
 }
 // critical account
+function filteraccount() {  
+  var filteraccount = getSelectedFilterAccount();
+  // console.log(filteraccount)
+//   // cellno=8;
+  filterData(filteraccount,13);
+  
+}
 
 function getSelectedFilterAccount() {
 
@@ -329,13 +337,7 @@ function getSelectedFilterAccount() {
     }
   }
 }
-function filteraccount() {  
-  var filteraccount = getSelectedFilterAccount();
-  console.log(filteraccount)
-//   // cellno=8;
-  filterData(filteraccount,13);
-  
-}
+
 function  filterData(Type,cellno) {
     var table = document.getElementById("dataTable");
 
@@ -352,6 +354,11 @@ function  filterData(Type,cellno) {
     }
   }
   // filter payment
+  function filterPayment() {  
+    var filterPayment = getSelectedFilterPayment();
+    filterData(filterPayment,14);
+    
+  }
   function getSelectedFilterPayment() {
 
     var filterRadios = document.getElementsByName("filterPayment");
@@ -361,13 +368,7 @@ function  filterData(Type,cellno) {
       }
     }
   }
-  function filterPayment() {  
-    var filterPayment = getSelectedFilterPayment();
-    console.log(filterPayment)
-   
-    filterData(filterPayment,14);
-    
-  }
+ 
   function  filterData(Type,cellno) {
       var table = document.getElementById("dataTable");
   
@@ -384,6 +385,12 @@ function  filterData(Type,cellno) {
       }
     }
     // catogeries
+    function filtercategory() {  
+      var filtercategory = getSelectedFilterCategory();
+     
+      filterData(filtercategory,9);
+      
+    }
     function getSelectedFilterCategory() {
 
       var filterRadios = document.getElementsByName("filtercategory");
@@ -393,13 +400,7 @@ function  filterData(Type,cellno) {
         }
       }
     }
-    function filtercategory() {  
-      var filtercategory = getSelectedFilterCategory();
-      console.log(filtercategory)
-     
-      filterData(filtercategory,9);
-      
-    }
+  
     function  filterData(Type,cellno) {
         var table = document.getElementById("dataTable");
     
@@ -416,7 +417,96 @@ function  filterData(Type,cellno) {
         }
       }
 
-      // total
+      //filter by name
+          
+    function clearNameFilter() {
+      var input = document.getElementById("nameFilter");
+      input.value = ""; 
+      filterByName(); 
+  }
+      function filterByName() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("nameFilter");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("dataTable");
+        tr = table.getElementsByTagName("tr");
+    
+       
+        for (i = 1; i < tr.length; i++) { 
+            td = tr[i].getElementsByTagName("td")[0]; 
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    // filter by phone number
+    function clearPhoneFilter() {
+      var input = document.getElementById("phoneFilter");
+      input.value = ""; 
+      filterByPhoneNumber(); 
+  }
+  
+    function filterByPhoneNumber() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("phoneFilter");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("dataTable");
+      tr = table.getElementsByTagName("tr");
+  
+     
+      for (i = 1; i < tr.length; i++) { 
+          td = tr[i].getElementsByTagName("td")[2]; 
+          if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  tr[i].style.display = "";
+              } else {
+                  tr[i].style.display = "none";
+              }
+          }
+      }
+  }
+  // search by email
+  function clearEmailFilter() {
+    var input = document.getElementById("emailFilter");
+    input.value = "";   
+    filterByEmail(); 
+}
+
+  function filterByEmail() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("emailFilter");
+    filter = input.value.toLowerCase(); 
+    table = document.getElementById("dataTable");
+    tr = table.getElementsByTagName("tr");
+
+
+    for (i = 1; i < tr.length; i++) { 
+        td = tr[i].getElementsByTagName("td")[1]; 
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            txtValue = txtValue.toLowerCase(); 
+            if (txtValue.indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+
+
+  
+
+  
+ 
+    
 
 
 

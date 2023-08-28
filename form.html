@@ -131,7 +131,7 @@
         <!-- filter -->
         <div class="filter">
             <!-- TYPE -->
-            <div class="filter-container-TYPE">
+            <div class="searchfilter">
              <label for="typeFilter">Filter by Type:</label>
 
          
@@ -148,7 +148,7 @@
              <button type="button" onclick="clearFilter()">Clear Filter</button><br />
          </div>
          <!-- CRITICAL ACCOUNT -->
-         <div class="filter-container-CRITICALACCOUNT">
+         <div class="searchfilter">
              <label for="typeFilter">critical account:</label>
           
              <input type="checkbox" id="filteryes" name="filteraccount" value="yes">
@@ -163,7 +163,7 @@
              
          </div>
          <!-- PAYMENT OPTIONS -->
-         <div class="filter-container-payment">
+         <div class="searchfilter">
          <label for="typeFilter">Payment Options:</label>
          
          <input type="checkbox" id="filtercod" name="filterPayment" value="cod">
@@ -181,7 +181,7 @@
  
          </div>
          <!-- category -->
-         <div class="filter-container-category">
+         <div class="searchfilter">
             <label for="typeFilter">category:</label>
          <input type="checkbox" id="category" name="filtercategory" value="cloths">
          <label for="Cloths"> Cloths</label>
@@ -203,66 +203,31 @@
             </div>
             <br>
             <br>
-            
-            <!-- total -->
-            <!-- <label for="typeFilter">Filter by Type:</label>
-            <input type="checkbox" id="smallBusiness" name="filterType" value="smallbusiness">
-             <label for="smallBusiness">Small Business</label>
-         
-             <input type="checkbox" id="enterprise" name="filterType" value="enterprise">
-             <label for="enterprise">Enterprise</label>
+         <!-- search byn name -->
+         <div class="searchfilter">
+            <label for="namesearch">Search By Name:</label>
+            <input type="text" id="nameFilter" placeholder="Search by Name">
+            <button onclick="filterByName()">Search Here</button>
+            <button onclick="clearNameFilter()">Clear filter</button>
+        </div>
 
-             <input type="checkbox" id="entrepreneur" name="filterType" value="entrepreneur">
-             <label for="entrepreneur">Entrepreneur</label> 
-             <br>
-             <br>
+            <!-- search by phone number -->
+        <div class="searchfilter">
+            <label for="phonesearch">Search By Phone Number:</label>
+            <input type="number" id="phoneFilter" placeholder="Search by Phone Number">
+            <button onclick="filterByPhoneNumber()">Search Phone number</button>
+            <button onclick="clearPhoneFilter()">Clear filter</button>
+        </div>
 
-             <label for="typeFilter">critical account:</label>
-          
-             <input type="checkbox" id="filteryes" name="filteraccount" value="yes">
-             <label for="filteryes">yes</label>
-         
-             <input type="checkbox" id="filterNo" name="filteraccount" value="No">
-             <label for="filterNo">No</label>
-        <br>
-        <br>
-
-
-        <label for="typeFilter">Payment Options:</label>
-         
-         <input type="checkbox" id="filtercod" name="filterPayment" value="cod">
-         <label for="filtercod">cash on delivery</label>
-     
-         <input type="checkbox" id="filterUpi" name="filterPayment" value="Upi">
-         <label for="filterUpi">UPI</label>
-     
-         <input type="checkbox" id="filtercard" name="filterPayment" value="cardpayment">
-         <label for="filtercard">card payment</label>
-         <br>
-         <br>
+        <!--search by email  -->
+        <div class="searchfilter">
+            <label for="email">Search By Email:</label>
+            <input type="text" id="emailFilter" placeholder="Search by Email">
+            <button onclick="filterByEmail()">Search By Email</button>
+            <button onclick="clearEmailFilter()">Clear filter</button>
+        </div>
 
         
-         <label for="typeFilter">category:</label>
-         <input type="checkbox" id="category" name="filtercategory" value="cloths">
-         <label for="Cloths"> Cloths</label>
-
-         <input type="checkbox" id="category" name="filtercategory" value="toys">
-         <label for="toys"> Toys</label>
-
-         <input type="checkbox" id="category" name="filtercategory" value="groceries">
-         <label for="groceries">Groceries</label>
-
-         <input type="checkbox" id="category" name="filtercategory" value="electronics">
-         <label for="electronics">Electronics</label>
-
-         <input type="checkbox" id="category" name="filtercategory" value="digital">
-         <label for="digital">Digital</label>
-         
-         <button type="button" onclick="filterPayment()">Apply Filter</button>
-         <button type="button" onclick="clearFilter()">Clear Filter</button><br /> -->
-     
-
-
 
 
          </div>

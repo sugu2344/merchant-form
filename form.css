@@ -81,3 +81,9 @@
       width: 50%;
   
   }
+  .searchfilter{
+    padding: 10px 10px;
+    display: flex;
+  align-self: baseline;
+
+  }
