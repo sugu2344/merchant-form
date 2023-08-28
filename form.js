@@ -313,6 +313,7 @@ function  filterData(Type,cellno) {
       }
     }
   }
+  // clear filter for all  common
 function clearFilter() {
   var table = document.getElementById("dataTable");
   for (var i = 1; i < table.rows.length; i++) {
@@ -419,11 +420,7 @@ function  filterData(Type,cellno) {
 
       //filter by name
           
-    function clearNameFilter() {
-      var input = document.getElementById("nameFilter");
-      input.value = ""; 
-      filterByName(); 
-  }
+
       function filterByName() {
         var input, filter, table, tr, td, i, txtValue;
         input = document.getElementById("nameFilter");
@@ -446,11 +443,7 @@ function  filterData(Type,cellno) {
     }
 
     // filter by phone number
-    function clearPhoneFilter() {
-      var input = document.getElementById("phoneFilter");
-      input.value = ""; 
-      filterByPhoneNumber(); 
-  }
+  
   
     function filterByPhoneNumber() {
       var input, filter, table, tr, td, i, txtValue;
@@ -473,11 +466,7 @@ function  filterData(Type,cellno) {
       }
   }
   // search by email
-  function clearEmailFilter() {
-    var input = document.getElementById("emailFilter");
-    input.value = "";   
-    filterByEmail(); 
-}
+
 
   function filterByEmail() {
     var input, filter, table, tr, td, i, txtValue;
